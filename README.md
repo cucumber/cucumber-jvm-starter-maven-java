@@ -1,11 +1,8 @@
-# Cucumber-Java Skeleton
+# Cucumber JVM - Starter: Java with Maven
 
-This is the simplest possible setup for Cucumber using Java. There is nothing
-fancy like a webapp or browser testing. All this does is to show you how to
-set up and run Cucumber!
-
-There is a single feature file with one scenario. The scenario has three steps,
-two of them pending. See if you can make them all pass!
+This is the simplest possible setup for Cucumber-JVM using Java with Maven.
+There is nothing fancy like a webapp or browser testing. All this does is to
+show you how to set up and run Cucumber!
 
 To write assertions the project comes with [AssertJ](https://assertj.github.io/doc/#assertj-core-assertions-guide)
 included. 
@@ -25,22 +22,10 @@ Subversion:
 Or [download a zip](https://github.com/cucumber/cucumber-java-skeleton/archive/main.zip) file.
 
 ## Run the tests
-### Use Maven
 
 Open a command window and run:
 
-    cd maven
     ./mvnw test
-
-This runs Cucumber features using Cucumber's JUnit Platform Engine. The `Suite`
-annotation on the `RunCucumberTest` class tells JUnit to kick off Cucumber.
-
-### Use Gradle
-
-Open a command window and run:
-
-    cd gradle
-    ./gradlew test --rerun-tasks --info
 
 This runs Cucumber features using Cucumber's JUnit Platform Engine. The `Suite`
 annotation on the `RunCucumberTest` class tells JUnit to kick off Cucumber.
@@ -80,7 +65,7 @@ Then add an annotation to `RunCucumberTest`.
 @IncludeTags("Zucchini")
 ```
 
-When using Maven, tags can be selected from the CLI using the `groups` and `excludedGroups` parameters. These take a
+Tags can be selected from the CLI using the `groups` and `excludedGroups` parameters. These take a
 [JUnit5 Tag Expression](https://junit.org/junit5/docs/current/user-guide/#running-tests-tag-expressions). 
 Note: When using JUnit, the `@` is not part of the tag.
 
@@ -95,8 +80,6 @@ with JUnit selectors. As a work around the `cucumber.features` property can be
 used. Because this property will cause Cucumber to ignore any other selectors
 from JUnit it is prudent to only execute the Cucumber engine.
 
-#### With Maven
-
 To select the scenario on line 3 of the `belly.feature` file use:
 
 ```
@@ -104,7 +87,3 @@ To select the scenario on line 3 of the `belly.feature` file use:
 ```
 
 Note: Add `-Dcucumber.plugin=pretty` to get a more detailed output during test execution.
-
-#### With Gradle
-
-TODO: (I don't know how to do this. Feel free to send a pull request. ;))

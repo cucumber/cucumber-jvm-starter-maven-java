@@ -6,3 +6,7 @@
 .settings
 .classpath
 .project
+
+# Maven
+target/
+*.versionsBackup
