@@ -41,7 +41,7 @@ For available parameters see: `io.cucumber.junit.platform.engine.Constants`
 
 Specify a particular scenario by *line*
 
-    @SelectClasspathResource(value = "io/cucumber/skeleton/belly.feature", line = 3)
+    @SelectClasspathResource(value = "com/example/project/belly.feature", line = 3)
 
 In case you have multiple feature files or scenarios to run against repeat the
 annotation.
@@ -81,7 +81,7 @@ from JUnit it is prudent to only execute the Cucumber engine.
 To select the scenario on line 3 of the `belly.feature` file use:
 
 ```
-./mvnw test -Dsurefire.includeJUnit5Engines=cucumber -Dcucumber.features=src/test/resources/io/cucumber/skeleton/belly.feature:3 
+./mvnw test -Dsurefire.includeJUnit5Engines=cucumber -Dcucumber.features=src/test/resources/com/example/project/belly.feature:3 
 ```
 
 Note: Add `-Dcucumber.plugin=pretty` to get a more detailed output during test execution.

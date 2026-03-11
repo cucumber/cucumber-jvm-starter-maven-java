@@ -1,4 +1,4 @@
-package io.cucumber.skeleton;
+package com.example.project;
 
 import org.junit.platform.suite.api.ConfigurationParameter;
 import org.junit.platform.suite.api.IncludeEngines;
@@ -10,8 +10,8 @@ import static io.cucumber.junit.platform.engine.Constants.GLUE_PROPERTY_NAME;
 
 @Suite
 @IncludeEngines("cucumber")
-@SelectPackages("io.cucumber.skeleton")
+@SelectPackages("com.example.project")
 @ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "html:target/report.html")
-@ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "io.cucumber.skeleton")
+@ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "com.example.project")
 public class RunCucumberTest {
 }

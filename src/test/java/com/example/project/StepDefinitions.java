@@ -1,4 +1,4 @@
-package io.cucumber.skeleton;
+package com.example.project;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
