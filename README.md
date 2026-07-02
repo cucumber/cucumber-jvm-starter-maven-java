@@ -2,13 +2,12 @@
 
 This is the simplest possible setup for Cucumber-JVM using Java with Maven.
 There is nothing fancy like a webapp or browser testing. All this does is to
-show you how to set up and run Cucumber!
-
-There is a single feature file with one scenario. The scenario has three steps,
-one passing, skipped and undefined. See if you can make them all pass!
+show you how to set up and run Cucumber! If this is your first time using
+Cucumber have a look at the [10-minute tutorial](https://cucumber.io/docs/guides/10-minute-tutorial)
+first. 
 
 To write assertions the project comes with [AssertJ](https://assertj.github.io/doc/#assertj-core-assertions-guide)
-included. 
+included.
 
 ## Get the code
 
@@ -23,10 +22,36 @@ Or [download a zip](https://github.com/cucumber/cucumber-jvm-starter-maven-java/
 
 Open a command window and run:
 
-    ./mvnw test
+On macOS/Linux:
+
+```shell
+./mvnw test
+```
+
+On Windows PowerShell:
+
+```powershell
+.\mvnw.cmd test
+```
 
 This runs Cucumber features using Cucumber's JUnit Platform Engine. The `Suite`
 annotation on the `RunCucumberTest` class tells JUnit to kick off Cucumber.
+
+```text
+[INFO] Running com.example.project.RunCucumberTest
+
+Scenario: a few cukes                 # classpath:com/example/project/belly.feature:3
+  ✔ Given I have 42 cukes in my belly # com.example.project.StepDefinitions.I_have_cukes_in_my_belly(int)
+  ↷ When I wait 1 hour                # com.example.project.StepDefinitions.i_wait_hour(java.lang.Integer)
+        org.opentest4j.TestAbortedException: TODO: Implement me
+                at com.example.project.StepDefinitions.i_wait_hour(StepDefinitions.java:19)
+                at ✽.I wait 1 hour(classpath:com/example/project/belly.feature:5)
+  ↷ Then my belly should growl
+```
+
+The output show that there is a single feature file with one scenario. The
+scenario has three steps, one passing, one pending, and one undefined. See if
+you make can each step pass.
 
 ## Configuration 
 
@@ -84,4 +109,5 @@ To select the scenario on line 3 of the `belly.feature` file use:
 ./mvnw test -Dsurefire.includeJUnit5Engines=cucumber -Dcucumber.features=src/test/resources/com/example/project/belly.feature:3 
 ```
 
-Note: Add `-Dcucumber.plugin=pretty` to get a more detailed output during test execution.
+Note: Add `-Dcucumber.plugin=pretty` to get a more detailed output during test
+execution.
