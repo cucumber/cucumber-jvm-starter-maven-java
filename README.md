@@ -42,9 +42,9 @@ annotation on the `RunCucumberTest` class tells JUnit to kick off Cucumber.
 
 Scenario: a few cukes                 # classpath:com/example/project/belly.feature:3
   ✔ Given I have 42 cukes in my belly # com.example.project.StepDefinitions.I_have_cukes_in_my_belly(int)
-  ↷ When I wait 1 hour                # com.example.project.StepDefinitions.i_wait_hour(java.lang.Integer)
+  ↷ When I wait 1 hour                # com.example.project.StepDefinitions.i_wait_seconds(java.lang.Integer)
         org.opentest4j.TestAbortedException: TODO: Implement me
-                at com.example.project.StepDefinitions.i_wait_hour(StepDefinitions.java:19)
+                at com.example.project.StepDefinitions.i_wait_seconds(StepDefinitions.java:19)
                 at ✽.I wait 1 hour(classpath:com/example/project/belly.feature:5)
   ↷ Then my belly should growl
 ```
