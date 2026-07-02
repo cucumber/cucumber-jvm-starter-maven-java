@@ -23,10 +23,36 @@ Or [download a zip](https://github.com/cucumber/cucumber-jvm-starter-maven-java/
 
 Open a command window and run:
 
-    ./mvnw test
+On macOS/Linux:
+
+```shell
+./mvnw test
+```
+
+On Windows PowerShell:
+
+```powershell
+.\mvnw.cmd test
+```
 
 This runs Cucumber features using Cucumber's JUnit Platform Engine. The `Suite`
 annotation on the `RunCucumberTest` class tells JUnit to kick off Cucumber.
+
+Example output:
+
+```text
+Scenario: a few cukes
+
+  Given I have 42 cukes in my belly
+  When I wait 1 hour
+  Then my belly should growl
+
+org.opentest4j.TestAbortedException: TODO
+```
+
+The `When` step intentionally aborts with `TODO`. This is expected and part of
+the exercise. Complete the step definition and rerun the tests until all steps
+pass.
 
 ## Configuration 
 
@@ -84,4 +110,5 @@ To select the scenario on line 3 of the `belly.feature` file use:
 ./mvnw test -Dsurefire.includeJUnit5Engines=cucumber -Dcucumber.features=src/test/resources/com/example/project/belly.feature:3 
 ```
 
-Note: Add `-Dcucumber.plugin=pretty` to get a more detailed output during test execution.
+The starter project enables the `pretty` plugin by default. Running the tests
+displays the executed steps in the console while also generating the HTML report.
