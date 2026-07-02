@@ -14,7 +14,7 @@ public class StepDefinitions {
     }
 
     @When("I wait {int} seconds")
-    public void i_wait_hour(Integer int1) {
+    public void i_wait_seconds(Integer int1) {
         // Write code here that turns the phrase above into concrete actions
         throw new TestAbortedException("TODO: Implement me");
     }
